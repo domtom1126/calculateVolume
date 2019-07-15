@@ -6,6 +6,11 @@ namespace calculateVolume
     {
         static void Main(string[] args)
         {
+            calculateVolume();
+        }
+
+        public static void calculateVolume()
+        {
             Console.WriteLine("What is the radius");
             int radius = Convert.ToInt32(Console.ReadLine());
             int radiusSquared = radius * radius;
@@ -18,6 +23,7 @@ namespace calculateVolume
             double totalVolume = height * radiusSquared * pi;
 
             Console.WriteLine("The volume is {0}", totalVolume);
+
         }
     }
 }
