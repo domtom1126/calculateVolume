@@ -6,6 +6,7 @@ namespace calculateVolume
     {
         static void Main(string[] args)
         {
+            Console.Clear();
             bool displayMenu = true;
             while (displayMenu == true)
             {
@@ -18,58 +19,68 @@ namespace calculateVolume
         {
             Console.WriteLine("What shape do you want the volume for?");
             Console.WriteLine();
-            Console.WriteLine("1. Cylinder");
-            Console.WriteLine("2. Cube");
-            Console.WriteLine("3. Prism");
-            Console.WriteLine("4. Pyramid");
-            Console.WriteLine("5. Exit");
+            Console.WriteLine("1. Prism");
+            Console.WriteLine("2. Pyramid");
+            Console.WriteLine("3. Exit");
             string result = Console.ReadLine();
 
             if (result == "1")
             {
-                calculateVolumeOfCylinder();
+                Prism();
                 return true;
             }
             else if (result == "2")
             {
-                calculateVolumeOfCube();
+                Pyramid();
                 return true;
             }
             else if (result == "3")
             {
-                calculateVolumeOfPrism();
-                return true;
-            }
-            else if (result == "4")
-            {
-                calculateVolumeOfPyramid();
-                return true;
-            }
-            else if (result == "5")
-            {
                 Console.Clear();
-                return false;
+                return true;
             }
             else
             {
-                Console.WriteLine("Please use a valid number");
+                Console.WriteLine("Enter a proper value");
                 return false;
             }
-
         }
 
         public static void Prism()
         {
+            Console.Clear();
             Console.WriteLine("What kind of prism?");
             Console.WriteLine();
             Console.WriteLine("1. Rectangular Prism");
             Console.WriteLine("2. Cube");
             Console.WriteLine("3. Triangular Prism");
-            Console.WriteLine("3. Cylinder");
-             void RectangularPrism()
-            {
+            Console.WriteLine("4. Cylinder");
 
+            string PrismResult = Console.ReadLine();
+
+            if (PrismResult == "1")
+            {
+                Console.WriteLine("What is the height");
+                int height = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("What is the width");
+                int width = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("What is the length");
+                int length = Convert.ToInt32(Console.ReadLine());
+
+                int rectangularPrismVolume = height * length * width;
+
+                Console.WriteLine("The total volume of the retangular prism is {0}", rectangularPrismVolume);
             }
+        }
+
+        public static void Pyramid()
+        {
+            Console.Clear();
+            Console.WriteLine("What kind of pyramid?");
+            Console.WriteLine();
+            Console.WriteLine("1. Square or Rectangular Pyramid");
+            Console.WriteLine("2. Triangular Pyramid");
+            Console.WriteLine("3. Cone");
         }
 
         public static void calculateVolumeOfCylinder()
